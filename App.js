@@ -1,11 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, {useState} from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
+
+const [clima, setClima] = useState("Llivioso")
+
+
+const llamarServicioDeClima = (tipo) => setClima(tipo)
+
+
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Es un día {clima}</Text>
+      <Text onPress={() => llamarServicioDeClima("soleado")}>Convertir</Text>
       <StatusBar style="auto" />
     </View>
   );
